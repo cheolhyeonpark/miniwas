@@ -1,4 +1,4 @@
-package com.cheolhyeon.miniwas.bin;
+package com.cheolhyeon.miniwas.server;
 
 import com.cheolhyeon.miniwas.lib.HTTPServletRequest;
 import com.cheolhyeon.miniwas.lib.HTTPServletResponse;
@@ -10,23 +10,26 @@ import java.net.Socket;
 
 public class Container {
 
-    public static final int portNumber = 3636;
+    private static final int PORT_NUMBER = 3636;
+    private static final String FILE_PATH = "../../app";
 
     public void run() {
         try {
-            ServerSocket serverSocket = new ServerSocket(portNumber);
+            ServerSocket serverSocket = new ServerSocket(PORT_NUMBER);
             Socket socket = serverSocket.accept();
             HTTPServletRequest request = new HTTPServletRequest();
             RequestReader requestReader = new RequestReader(request);
             requestReader.run(socket.getInputStream());
 
             String url = request.getRequestUrl();
-            File file = new File("../../app" + url);
+            File file = new File(FILE_PATH + url);
             if (file.isFile()) {
                 HTTPServletResponse response = new HTTPServletResponse(file, socket.getOutputStream());
-                response.setHeader("Content-Type", "text/html");
+                response.setFileContentType();
                 response.sendFile();
+                return;
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }

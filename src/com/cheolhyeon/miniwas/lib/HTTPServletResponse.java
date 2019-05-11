@@ -1,9 +1,7 @@
 package com.cheolhyeon.miniwas.lib;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class HTTPServletResponse {
@@ -11,7 +9,10 @@ public class HTTPServletResponse {
     private static final String HTTP_VER_1_1 = "HTTP/1.1";
     private static final int STATUS_CODE_OK = 200;
     private static final String STATUS_TEXT_OK = "OK";
-    private static final int BUFFER_SIZE = 128;
+    private static final String CONTENT_TYPE = "Content-Type";
+    private static final String CONTENT_TYPE_PNG = "image/png";
+    private static final String CONTENT_TYPE_JPG = "image/jpeg";
+    private static final String CONTENT_TYPE_HTML = "text/html";
 
     private String httpVersion;
     private int statusCode;
@@ -49,35 +50,37 @@ public class HTTPServletResponse {
         headerMap.put(key, value);
     }
 
-    private boolean hasHeaderMap() { return headerMap != null; }
-
-    public void sendFile() throws IOException {
-        writeHeader();
-        List<Byte> fileBytes = getFileBytes();
-        int writeCount = 0;
-        byte[] bufferByte = new byte[fileBytes.size()];
-        for (byte fileByte : fileBytes) {
-            bufferByte[writeCount] = fileByte;
-            writeCount++;
+    public void setFileContentType() {
+        if (file.getName().endsWith(".png")) {
+            setHeader(CONTENT_TYPE, CONTENT_TYPE_PNG);
+            return;
         }
-        outputStream.write(bufferByte);
-        outputStream.flush();
+        if (file.getName().endsWith(".jpg") || file.getName().endsWith(".jpeg")) {
+            setHeader(CONTENT_TYPE, CONTENT_TYPE_JPG);
+            return;
+        }
+        if (file.getName().endsWith(".html")) {
+            setHeader(CONTENT_TYPE, CONTENT_TYPE_HTML);
+            return;
+        }
     }
 
-    private List<Byte> getFileBytes() {
-        List<Byte> fileBytes = new ArrayList<>();
-        try (FileInputStream fileInputStream = new FileInputStream(file)) {
-            int readCount = 0;
-            byte[] bufferByte = new byte[BUFFER_SIZE];
-            while ((readCount = fileInputStream.read(bufferByte)) != -1) {
-                for (int i = 0; i < readCount; i++) {
-                    fileBytes.add(bufferByte[i]);
-                }
+    private boolean hasHeaderMap() { return headerMap != null; }
+
+    public void sendFile() {
+        writeHeader();
+        try (BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file));
+             BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(outputStream);) {
+            int readByte = -1;
+            while ((readByte = bufferedInputStream.read()) != -1) {
+                bufferedOutputStream.write(readByte);
             }
+            bufferedOutputStream.flush();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return fileBytes;
     }
 
     public PrintWriter getWriter() {

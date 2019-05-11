@@ -1,4 +1,4 @@
-package com.cheolhyeon.miniwas.bin;
+package com.cheolhyeon.miniwas.server;
 
 import com.cheolhyeon.miniwas.lib.HTTPServletRequest;
 
@@ -10,16 +10,16 @@ import java.util.List;
 
 public class RequestReader {
 
-    public static final byte CR = '\r';
-    public static final byte LF = '\n';
-    public static final String SPACE = " ";
-    public static final String COLON = ":";
-    public static final String QUESTION_MARK = "\\?";
-    public static final String AMPERSAND = "&";
-    public static final String EQUAL_SIGN = "=";
-    public static final String GET_METHOD = "GET";
-    public static final String CONTENT_LENGTH = "Content-Length";
-    public static final String CONTENT_TYPE = "Content-Type";
+    private static final byte CR = '\r';
+    private static final byte LF = '\n';
+    private static final String SPACE = " ";
+    private static final String COLON = ":";
+    private static final String QUESTION_MARK = "\\?";
+    private static final String AMPERSAND = "&";
+    private static final String EQUAL_SIGN = "=";
+    private static final String GET_METHOD = "GET";
+    private static final String CONTENT_LENGTH = "Content-Length";
+    private static final String CONTENT_TYPE = "Content-Type";
 
     private boolean isBody = false;
     private int contentLength = 0;
