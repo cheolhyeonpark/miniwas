@@ -7,6 +7,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.URL;
+import java.net.URLClassLoader;
 
 public class Container {
 
@@ -30,7 +32,17 @@ public class Container {
                 return;
             }
 
+            URLClassLoader urlClassLoader = new URLClassLoader(new URL[] {file.toURI().toURL()});
+            Class clazz = urlClassLoader.loadClass("ClassLoader");
+            Object object = clazz.newInstance();
+            System.out.println(object.toString());
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
             e.printStackTrace();
         }
 

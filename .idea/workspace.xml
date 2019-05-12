@@ -2,25 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfcf8a57-5506-4620-a49e-608b6b57d2c9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/DeployDescriptorReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniwas/Hello.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/Server_0.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/Server_1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/Server_2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/Server_3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/Server_4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/bin/Container.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/bin/RequestReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/bin/StartUp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/lib/HTTPServletResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/lib/HTTPServletResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/servlet/CL$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/servlet/CL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/servlet/Callee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/servlet/CalleeImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/bin/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/Container.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/bin/RequestReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/RequestReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/bin/StartUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/StartUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/lib/HTTPServletResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/lib/HTTPServletResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/server/ClassLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/server/Container.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/miniwas/com/cheolhyeon/miniwas/server/Container.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/Container.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,13 +20,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/Container.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
-              <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+            <state relative-caret-position="324">
+              <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/DeployDescriptorReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="579">
+              <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#838#839#0" expanded="true" />
+                <element signature="e#889#890#0" expanded="true" />
+                <element signature="e#1528#1529#0" expanded="true" />
+                <element signature="e#1578#1579#0" expanded="true" />
+                <element signature="e#1893#1894#0" expanded="true" />
+                <element signature="e#1935#1936#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,7 +65,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/lib/HTTPServletResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
+            <state relative-caret-position="308">
               <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -76,7 +80,7 @@
             <state relative-caret-position="88">
               <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
               <folding>
-                <element signature="e#141#142#0" expanded="true" />
+                <element signature="e#144#145#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/RequestReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7">
-              <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+            <state relative-caret-position="660">
+              <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -149,6 +153,7 @@
       <find>buffer</find>
       <find>128</find>
       <find>file</find>
+      <find>filepath</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -182,7 +187,10 @@
         <option value="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/bin/ClassLoader.java" />
         <option value="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/ClassLoader.java" />
         <option value="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/ServletClassLoader.java" />
+        <option value="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/ClassLoadingTest.java" />
         <option value="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/Container.java" />
+        <option value="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/Initializer.java" />
+        <option value="$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/DeployDescriptorReader.java" />
       </list>
     </option>
   </component>
@@ -198,7 +206,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -229,6 +236,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -255,13 +263,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ServletClassLoader">
-    <configuration name="Server_3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cheolhyeon.miniwas.Server_3" />
+  <component name="RunManager" selected="Application.DeployDescriptorReader">
+    <configuration name="DeployDescriptorReader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cheolhyeon.miniwas.server.DeployDescriptorReader" />
       <module name="miniwas" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.cheolhyeon.miniwas.*" />
+          <option name="PATTERN" value="com.cheolhyeon.miniwas.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -323,11 +331,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ServletClassLoader" />
+        <item itemvalue="Application.DeployDescriptorReader" />
         <item itemvalue="Application.StartUp" />
+        <item itemvalue="Application.ServletClassLoader" />
         <item itemvalue="Application.SummerCoding" />
         <item itemvalue="Application.Server_4" />
-        <item itemvalue="Application.Server_3" />
       </list>
     </recent_temporary>
   </component>
@@ -353,18 +361,19 @@
       <workItem from="1556712249446" duration="367000" />
       <workItem from="1556714137961" duration="3006000" />
       <workItem from="1557110371343" duration="3405000" />
-      <workItem from="1557533875883" duration="14205000" />
+      <workItem from="1557533875883" duration="15072000" />
+      <workItem from="1557626609647" duration="6585000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90578000" />
+    <option name="totallyTimeSpent" value="98030000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16768125" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16934144" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -373,7 +382,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.22354212" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22354212" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.22354212" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -445,6 +454,10 @@
     <entry file="file://$PROJECT_DIR$/miniwas.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/bin/Costant.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/SummerCoding.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/ServletClassLoader.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/ClassLoadingTest.java" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -455,24 +468,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/bin/Costant.java">
+    <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/lib/HTTPServletResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/SummerCoding.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/RequestReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        <state relative-caret-position="308">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -484,7 +483,17 @@
         <state relative-caret-position="88">
           <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
           <folding>
-            <element signature="e#141#142#0" expanded="true" />
+            <element signature="e#144#145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/RequestReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -502,34 +511,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/lib/HTTPServletResponse.java">
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/lang/ClassLoader.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="98">
+          <caret line="257" selection-start-line="257" selection-end-line="257" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/ServletClassLoader.java">
+    <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/Initializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#274#275#0" expanded="true" />
-            <element signature="e#301#302#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="88">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/Container.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+        <state relative-caret-position="324">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/cheolhyeon/miniwas/server/DeployDescriptorReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#838#839#0" expanded="true" />
+            <element signature="e#889#890#0" expanded="true" />
+            <element signature="e#1528#1529#0" expanded="true" />
+            <element signature="e#1578#1579#0" expanded="true" />
+            <element signature="e#1893#1894#0" expanded="true" />
+            <element signature="e#1935#1936#0" expanded="true" />
           </folding>
         </state>
       </provider>
