@@ -3,22 +3,21 @@ package com.cheolhyeon.miniwas.server;
 import java.io.*;
 import java.util.ArrayList;
 
-public class DeployDescriptorReader {
+public class DeploymentDescriptorReader {
 
     private static final String LEFT_ANGLE_BRACKET = "<";
     private static final String RIGHT_ANGLE_BRACKET = ">";
     private static final String SLASH = "/";
 
-    private String deployDescriptor;
+    private String deploymentDescriptor;
 
-    public DeployDescriptorReader() {}
+    public DeploymentDescriptorReader() {}
 
-    public DeployDescriptorReader(String filePath) {
-        deployDescriptor = getDeployDescriptor(filePath);
-        System.out.println(deployDescriptor);
+    public DeploymentDescriptorReader(String filePath) {
+        deploymentDescriptor = getDeploymentDescriptor(filePath);
     }
 
-    public String getDeployDescriptor(String filePath) {
+    public String getDeploymentDescriptor(String filePath) {
         String xml = "";
         File file = new File(filePath);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)))) {
@@ -35,33 +34,33 @@ public class DeployDescriptorReader {
     }
 
     public ArrayList<String> getElements(String elementName) {
-        return getElements(elementName, deployDescriptor);
+        return getElements(elementName, deploymentDescriptor);
     }
 
-    public ArrayList<String> getElements(String elementName, String deployDescriptor) {
+    public ArrayList<String> getElements(String elementName, String deploymentDescriptor) {
         ArrayList<String> elements = new ArrayList<>();
         String startTag = getStartTag(elementName);
         String endTag = getEndTag(elementName);
         int startIdx = 0;
         int endIdx = 0;
-        while ((startIdx = deployDescriptor.indexOf(startTag, endIdx)) != -1) {
+        while ((startIdx = deploymentDescriptor.indexOf(startTag, endIdx)) != -1) {
             startIdx += startTag.length();
-            endIdx = deployDescriptor.indexOf(endTag, startIdx);
-            String element = deployDescriptor.substring(startIdx, endIdx);
+            endIdx = deploymentDescriptor.indexOf(endTag, startIdx);
+            String element = deploymentDescriptor.substring(startIdx, endIdx);
             elements.add(element);
         }
         return elements;
     }
 
     public String getElement(String elementName) {
-        return getElement(elementName, deployDescriptor);
+        return getElement(elementName, deploymentDescriptor);
     }
 
-    public String getElement(String elementName, String deployDescriptor) {
+    public String getElement(String elementName, String deploymentDescriptor) {
         String startTag = getStartTag(elementName);
         String endTag = getEndTag(elementName);
-        return deployDescriptor.substring(deployDescriptor.indexOf(startTag) + startTag.length()
-                , deployDescriptor.indexOf(endTag));
+        return deploymentDescriptor.substring(deploymentDescriptor.indexOf(startTag) + startTag.length()
+                , deploymentDescriptor.indexOf(endTag));
     }
 
     private String getStartTag(String elementName) {
