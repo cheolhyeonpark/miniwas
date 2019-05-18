@@ -9,17 +9,13 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
 import java.net.URLClassLoader;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Container {
 
     private static final int PORT_NUMBER = 3636;
     private static final String APP_ROOT = "../../app";
     private static final String WEB_INF = "WEB_INF";
-    private static final String DEPLOYMENT_DESCRIPTER = "web.xml";
-
-    private Map<String, String> servletMap;
+    private static final String DEPLOYMENT_DESCRIPTOR = "web.xml";
 
     public void run() {
         try {
@@ -44,6 +40,8 @@ public class Container {
             Class clazz = urlClassLoader.loadClass("ClassLoader");
             Object object = clazz.newInstance();
             System.out.println(object.toString());
+
+
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
@@ -56,7 +54,10 @@ public class Container {
     }
 
     private void init() {
-        servletMap = new HashMap<>();
+
+    }
+
+    private void readDeployDescriptor() {
         File file = new File(APP_ROOT);
         String[] fileNames = file.list();
         for (String fileName : fileNames) {
@@ -64,8 +65,9 @@ public class Container {
             File application = new File(appPath);
             if (application.isDirectory()) {
                 DeploymentDescriptorReader reader = new DeploymentDescriptorReader(appPath
-                        + File.separator + WEB_INF + File.separator + DEPLOYMENT_DESCRIPTER);
+                        + File.separator + WEB_INF + File.separator + DEPLOYMENT_DESCRIPTOR);
             }
+
         }
     }
 }
