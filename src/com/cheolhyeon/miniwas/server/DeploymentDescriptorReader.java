@@ -5,16 +5,20 @@ import java.util.ArrayList;
 
 public class DeploymentDescriptorReader {
 
+    private static final String WEB_INF = "WEB-INF";
+    private static final String DEPLOYMENT_DESCRIPTOR = "web.xml";
     private static final String LEFT_ANGLE_BRACKET = "<";
     private static final String RIGHT_ANGLE_BRACKET = ">";
     private static final String SLASH = "/";
 
+    private String appName;
     private String deploymentDescriptor;
 
     public DeploymentDescriptorReader() {}
 
-    public DeploymentDescriptorReader(String filePath) {
-        deploymentDescriptor = getDeploymentDescriptor(filePath);
+    public DeploymentDescriptorReader(String appPath) {
+        this.appName = appPath.substring(appPath.lastIndexOf(SLASH));
+        deploymentDescriptor = getDeploymentDescriptor(appPath + File.separator + WEB_INF + File.separator + DEPLOYMENT_DESCRIPTOR);
     }
 
     public String getDeploymentDescriptor(String filePath) {
@@ -69,5 +73,9 @@ public class DeploymentDescriptorReader {
 
     private String getEndTag(String elementName) {
         return LEFT_ANGLE_BRACKET + SLASH + elementName + RIGHT_ANGLE_BRACKET;
+    }
+
+    public String getAppName() {
+        return appName;
     }
 }
