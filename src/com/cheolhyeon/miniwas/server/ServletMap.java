@@ -12,6 +12,7 @@ import java.util.Map;
 public class ServletMap {
 
     private static final String APP_ROOT = "../../app";
+
     private Map<String, String> urlMap;
     private Map<String, String> classMap;
     private Map<String, String> servletMap;
