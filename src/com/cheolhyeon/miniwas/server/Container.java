@@ -17,6 +17,7 @@ public class Container {
     private static final int PORT_NUMBER = 3636;
     private static final String APP_ROOT = "../../app";
     private static final String SLASH = "/";
+    private static final String DOT = ".";
     private static final String CLASS_MAP_ELEMENT = "servlet";
     private static final String CLASS_MAP_KEY = "servlet-name";
     private static final String CLASS_MAP_VALUE = "servlet-class";
@@ -87,7 +88,7 @@ public class Container {
 
     private void putElementMap(String element, String key, String value) {
         if (CLASS_MAP_ELEMENT.equals(element)) {
-            servletMap.putClassMap(key, value);
+            servletMap.putClassMap(key, value.replace(SLASH, DOT).replace(DOT, File.separator));
             return;
         }
         servletMap.putUrlMap(key, value);
