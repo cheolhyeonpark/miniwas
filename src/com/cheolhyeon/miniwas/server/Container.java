@@ -2,13 +2,12 @@ package com.cheolhyeon.miniwas.server;
 
 import com.cheolhyeon.miniwas.lib.HTTPServletRequest;
 import com.cheolhyeon.miniwas.lib.HTTPServletResponse;
+import com.cheolhyeon.miniwas.lib.Servlet;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.URL;
-import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +23,8 @@ public class Container {
     private static final String URL_MAP_ELEMENT = "servlet-mapping";
     private static final String URL_MAP_KEY = "servlet-name";
     private static final String URL_MAP_VALUE = "url-pattern";
+    private static final String WEB_INF = "WEB-INF";
+    private static final String CLASSES = "classes";
 
     ServletMap servletMap;
 
@@ -33,6 +34,7 @@ public class Container {
 
             ServerSocket serverSocket = new ServerSocket(PORT_NUMBER);
             Socket socket = serverSocket.accept();
+
             HTTPServletRequest request = new HTTPServletRequest();
             RequestReader requestReader = new RequestReader(request);
             requestReader.run(socket.getInputStream());
@@ -45,20 +47,16 @@ public class Container {
                 response.sendFile();
                 return;
             }
-
-            URLClassLoader urlClassLoader = new URLClassLoader(new URL[]{file.toURI().toURL()});
-            Class clazz = urlClassLoader.loadClass("ClassLoader");
-            Object object = clazz.newInstance();
-            System.out.println(object.toString());
-
-
+            if (servletMap.isServlet(url)) {
+                HTTPServletResponse response = new HTTPServletResponse(socket.getOutputStream());
+                servletMap.loadClass(url);
+                Servlet servlet = servletMap.getInstance(url);
+                servlet.init();
+                servlet.service(request, response);
+                servlet.destroy();
+                return;
+            }
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
             e.printStackTrace();
         }
     }
@@ -88,7 +86,9 @@ public class Container {
 
     private void putElementMap(String element, String key, String value) {
         if (CLASS_MAP_ELEMENT.equals(element)) {
-            servletMap.putClassMap(key, value.replace(SLASH, DOT).replace(DOT, File.separator));
+            servletMap.putClassMap(key, File.separator + value.substring(1)
+                    .replace(SLASH, File.separator + WEB_INF + File.separator + CLASSES + File.separator)
+                    .replace(DOT, File.separator));
             return;
         }
         servletMap.putUrlMap(key, value);
