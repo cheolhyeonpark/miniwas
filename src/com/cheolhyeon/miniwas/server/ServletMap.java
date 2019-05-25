@@ -36,4 +36,8 @@ public class ServletMap {
             servletMap.put(urlMap.get(servletName), classMap.get(servletName));
         }
     }
+
+    public boolean isServlet(String urlPath) {
+        return servletMap.keySet().contains(urlPath);
+    }
 }
