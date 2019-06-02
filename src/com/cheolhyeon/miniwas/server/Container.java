@@ -1,8 +1,6 @@
 package com.cheolhyeon.miniwas.server;
 
-import com.cheolhyeon.miniwas.lib.HTTPServletRequest;
-import com.cheolhyeon.miniwas.lib.HTTPServletResponse;
-import com.cheolhyeon.miniwas.lib.Servlet;
+import com.cheolhyeon.miniwas.thread.FixedThreadPool;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,6 +23,7 @@ public class Container {
     private static final String URL_MAP_VALUE = "url-pattern";
     private static final String WEB_INF = "WEB-INF";
     private static final String CLASSES = "classes";
+    private static final int NUMBER_OF_THREAD = 5;
 
     ServletMap servletMap;
 
@@ -32,29 +31,10 @@ public class Container {
         try {
             init();
 
-            ServerSocket serverSocket = new ServerSocket(PORT_NUMBER);
-            Socket socket = serverSocket.accept();
-
-            HTTPServletRequest request = new HTTPServletRequest();
-            RequestReader requestReader = new RequestReader(request);
-            requestReader.run(socket.getInputStream());
-
-            String url = request.getRequestUrl();
-            File file = new File(APP_ROOT + url);
-            if (file.isFile()) {
-                HTTPServletResponse response = new HTTPServletResponse(file, socket.getOutputStream());
-                response.setFileContentType();
-                response.sendFile();
-                return;
-            }
-            if (servletMap.isServlet(url)) {
-                HTTPServletResponse response = new HTTPServletResponse(socket.getOutputStream());
-                servletMap.loadClass(url);
-                Servlet servlet = servletMap.getInstance(url);
-                servlet.init();
-                servlet.service(request, response);
-                servlet.destroy();
-                return;
+            ServerSocket listener = new ServerSocket(PORT_NUMBER);
+            FixedThreadPool threadPool = new FixedThreadPool(NUMBER_OF_THREAD);
+            while (true) {
+                threadPool.execute(new RequestHandler(listener.accept(), servletMap));
             }
         } catch (IOException e) {
             e.printStackTrace();
